@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+    width="500pt"
+    height="500pt"
+    viewBox="0 0 500 500"
+    version="1.1"
+    id="venn5e"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg">
+    <defs>
+        <circle
+            id="basoid"
+            style="fill-opacity:0.1;stroke-width:1;stroke-opacity:1"
+            cx="250"
+            cy="200"
+            r="115" />
+        <path
+            id="int12"
+            style="fill-opacity:0;stroke-width:1;stroke-opacity:1"
+            d="M 310.92188 182.59277 A 115 115 0 0 0 206.69824 240 A 115 115 0 0 0 191.50342 298.77246 A 115 115 0 0 0 250.00049 315 A 115 115 0 0 0 364.99951 199.99951 A 115 115 0 0 0 364.97021 198.62256 A 115 115 0 0 0 363.79102 197.90771 A 115 115 0 0 0 310.92188 182.59277 z " />
+
+        <path
+            id="int123"
+            style="fill-opacity:0;stroke-width:1.5;stroke-opacity:1"
+            d="M 249.99902 197.45361 A 115 115 0 0 0 206.69824 240 A 115 115 0 0 0 191.50342 298.77246 A 115 115 0 0 0 250.00049 315 A 115 115 0 0 0 308.67627 298.66406 A 115 115 0 0 0 293.30127 240 A 115 115 0 0 0 249.99902 197.45361 z " />
+
+    </defs>
+
+    <script><![CDATA[
+        var rcx = 250;
+        var rcy = 265;
+        var n = 3;
+        
+        var angle = 360 / n;
+        var fills = ["#6600ff", "#0099ff", "#00cc00", "#cc9900", "#ff0000", "#999999", "#009933"];
+        var strokes = ["#ffffff", "#0099ff", "#00ff00", "#ff0000", "#cccc00", "#cc00cc", "#00cccc"];
+        
+        var svg = document.getElementsByTagName('svg')[0];
+        var defs = document.getElementsByTagName('defs')[0];
+        var templates = defs.querySelectorAll("circle,ellipse,path");
+        var numTemplates = templates.length;
+        for (var e = 0; e < numTemplates; e++) {
+            
+            for (var r = 0; r < n; r++) {
+                
+                var newElement = templates[e].cloneNode();
+                var fill = (r >= fills.length ? "none" : fills[r]);
+                var stroke = (e >= strokes.length ? "none" : strokes[e]);
+                    stroke = (r >= strokes.length ? "none" : strokes[r]);
+                var myAngle = (angle * r);
+                newElement.setAttribute("style", newElement.getAttribute("style")
+                     + ";stroke:" + stroke + ";fill:" + fill + ";"
+                     );
+                newElement.setAttribute("transform","rotate( " + myAngle + " " + rcx + " " + rcy
+                + ")");
+                svg.appendChild(newElement);
+
+                // There is only one center piece
+                if (e == numTemplates - 1 && numTemplates > 1) {
+                    break;
+                }
+            }
+        }
+    ]]></script>
+
+</svg>

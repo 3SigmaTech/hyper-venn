@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Hyper Venn</title>
+    <style>
+        .container > div {
+            display: inline-block;
+        }
+    </style>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="../build/hyper-venn.js"></script>
+
+    <script type="application/javascript">
+        function init() {
+            var sample = {
+                "Purple": ["001", "002", "003", "004", "005"],
+                "Blue": ["001", "002", "005", "007", "008"],
+                "Green": ["001", "002", "003", "004", "0012"],
+                "Orange": ["001", "002", "003", "006", "004"],
+                "Red": ["001", "002", "003", "007", "008"],
+                "Yellow": ["001", "002", "003", "005", "004"],
+                "Cyan": ["001", "002", "003", "006", "008"]
+            };
+
+            var venn = hyperVenn.hyperVenn(sample);
+            d3.select("#seven").call(venn);
+            
+            var distinctAreas = { useDistinctAreas: true };
+            hyperVenn.reset();
+            venn = hyperVenn.hyperVenn(sample, distinctAreas);
+            d3.select("#sevend").call(venn);
+
+            delete sample.Cyan;
+            delete sample.Yellow;
+            hyperVenn.reset();
+            venn = hyperVenn.hyperVenn(sample);
+            d3.select("#five").call(venn);
+
+            hyperVenn.reset();
+            venn = hyperVenn.hyperVenn(sample, distinctAreas);
+            d3.select("#fived").call(venn);
+
+
+            var opts2 = {useEllipses: true};
+            hyperVenn.reset();
+            venn = hyperVenn.hyperVenn(sample, opts2);
+            d3.select("#fivee").call(venn);
+
+            opts2.useDistinctAreas = true;
+            hyperVenn.reset();
+            venn = hyperVenn.hyperVenn(sample, opts2);
+            d3.select("#fiveed").call(venn);
+
+            delete sample.Red;
+            delete sample.Orange;
+            hyperVenn.reset();
+            venn = hyperVenn.hyperVenn(sample);
+            d3.select("#three").call(venn);
+
+            hyperVenn.reset();
+            venn = hyperVenn.hyperVenn(sample, distinctAreas);
+            d3.select("#threed").call(venn);
+
+        }
+    </script>
+</head>
+
+<body onload="init()">
+
+    <div class="container">
+        <div id="three"></div>
+        <div id="threed"></div>
+        <div id="five"></div>
+        <div id="fived"></div>
+        <div id="fivee"></div>
+        <div id="fiveed"></div>
+        <div id="seven"></div>
+        <div id="sevend"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "hyper-venn",
+  "version": "0.0.1",
+  "description": "{DESCRIPTION}",
+  "keywords": [
+    "d3",
+    "d3-module"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "build/hyper-venn.js",
+  "jsnext:main": "index",
+  "type": "module",
+  "homepage": "https://github.com/3SigmaTech/hyper-venn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3SigmaTech/hyper-venn.git"
+  },
+  "scripts": {
+    "pretest": "rm -rf build && mkdir build && rollup -c",
+    "test": "tape 'test/**/*-test.js'",
+    "dev": "run-when-changed --watch \"src/*.js\" --exec \"rollup -c\" & browser-sync start --server --files \"examples/**/*\" \"build/*.*\"",
+    "prepublish": "npm run test && uglifyjs build/hyper-venn.js -c -m -o build/hyper-venn.min.js",
+    "postpublish": "zip -j build/hyper-venn.zip -- LICENSE README.md build/hyper-venn.js build/hyper-venn.min.js"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.12",
+    "rollup": "^0.59.4",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollupify": "^0.5.1",
+    "run-when-changed": "^2.1.0",
+    "tape": "4",
+    "uglify-js": "3"
+  }
+}
