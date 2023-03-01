@@ -10,25 +10,29 @@ Note: throughout this document I will use the term "obloid" to refer to concave 
 
 ## Examples
 
-3-set diagrams (by intersection on the left, by non-overlapping area on the right)
+### 3-set diagrams 
 
-<img src="man/figures/3-venn.svg" width="49%" />
-<img src="man/figures/3-venn-by-area.svg" width="49%" />
+| By intersection | By non-overlapping area |
+| --- | --- |
+| <img src="man/figures/3-venn.svg" /> | <img src="man/figures/3-venn-by-area.svg" /> |
 
-5-set diagrams (by intersection on the left, by non-overlapping area on the right)
+### 5-set diagrams
 
-<img src="man/figures/5-venn.svg" width="49%" />
-<img src="man/figures/5-venn-by-area.svg" width="49%" />
+| By intersection | By non-overlapping area |
+| --- | --- |
+| <img src="man/figures/5-venn.svg" /> | <img src="man/figures/5-venn-by-area.svg" /> |
 
-5-set diagrams rendered with ellipses (by intersection on the left, by non-overlapping area on the right)
+### 5-set diagrams rendered with ellipses
 
-<img src="man/figures/5-venn-as-ellipses.svg" width="49%" />
-<img src="man/figures/5-venn-as-ellipses-by-area.svg" width="49%" />
+| By intersection | By non-overlapping area |
+| --- | --- |
+| <img src="man/figures/5-venn-as-ellipses.svg" /> | <img src="man/figures/5-venn-as-ellipses-by-area.svg" /> |
 
-7-set diagrams (by intersection on the left, by non-overlapping area on the right)
+### 7-set diagrams
 
-<img src="man/figures/7-venn.svg" width="49%" />
-<img src="man/figures/7-venn-by-area.svg" width="49%" />
+| By intersection | By non-overlapping area |
+| --- | --- |
+| <img src="man/figures/7-venn.svg" /> | <img src="man/figures/7-venn-by-area.svg" /> |
 
 # Installing
 
