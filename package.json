@@ -1,6 +1,6 @@
 {
   "name": "hyper-venn",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "{DESCRIPTION}",
   "keywords": [
     "d3",
@@ -16,7 +16,7 @@
     "url": "https://github.com/3SigmaTech/hyper-venn.git"
   },
   "scripts": {
-    "pretest": "rm -rf build && mkdir build && rollup -c",
+    "pretest": "rm -rf build && mkdir build && rollup -c && cp build/hyper-venn.js ./examples",
     "test": "tape 'test/**/*-test.js'",
     "dev": "run-when-changed --watch \"src/*.js\" --exec \"rollup -c\" & browser-sync start --server --files \"examples/**/*\" \"build/*.*\"",
     "prepublish": "npm run test && uglifyjs build/hyper-venn.js -c -m -o build/hyper-venn.min.js",

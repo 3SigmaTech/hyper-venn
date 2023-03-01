@@ -1,5 +1,5 @@
 var tape = require("tape"),
-    hyperVenn = require("..");
+    hyperVenn = require("../build/hyper-venn");
 
 tape("hyperVenn() has not been tested yet.", function(test) {
   test.equal(hyperVenn.hyperVenn(), "You're gonna have a bad time.");

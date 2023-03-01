@@ -2,13 +2,15 @@
 
 A D3 plugin for rendering 3-, 5-, and 7-set Venn diagrams[^todo-setcounts]. Though, using this plug-in for 3-set diagrams is a bit unnecessary - this was included as a baseline for development purposes. I wrote this package because I was looking for a 5-set Venn diagram in D3 and came across <a href="https://github.com/habtom/biojs-vis-genvenn">this repo</a>. I thought the main drawing component could be done a little more thoroughly. (Perhaps ironically, I haven't fully fleshed that functionality out in this plugin, but the objects are all there.)
 
-The base obloids are sourced from <a href="https://github.com/dusadrian/venn">this waaaaaaaay more powerful R package</a> and the objects used to render the intersection paths can be found in the <a href="/tree/master/test/var">/test/var/</a> directory.
+The base obloids are sourced from <a href="https://github.com/dusadrian/venn">this waaaaaaaay more powerful R package</a> and the objects used to render the intersection paths can be found in the <a href="man/development">/man/development/</a> directory.
 
 And, finally, the package was structured following the guidance outlined <a href="https://bost.ocks.org/mike/d3-plugin/">here</a>.
 
 Note: throughout this document I will use the term "obloid" to refer to concave / non-elliptical shapes.
 
 ## Examples
+
+<a href="https://3sigmatech.github.io/hyper-venn/examples/simple.html">See example here.</a>
 
 ### 3-set diagrams 
 
