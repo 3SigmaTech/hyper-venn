@@ -1,13 +1,13 @@
 {
-  "name": "@3SigmaTech/hyper-venn",
-  "version": "0.0.6",
+  "name": "hyper-venn",
+  "version": "0.0.7",
   "description": "Renders 3-, 5-, and 7-set pseudo-Venn diagrams",
   "keywords": [
     "d3",
     "d3-module",
     "venn"
   ],
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "main": "build/hyper-venn.js",
   "jsnext:main": "index",
   "type": "module",
@@ -22,7 +22,7 @@
     "dev": "run-when-changed --watch \"src/*.js\" --exec \"rollup -c\" & browser-sync start --server --files \"examples/**/*\" \"build/*.*\"",
     "prepublish": "npm run test && uglifyjs build/hyper-venn.js -c -m -o build/hyper-venn.min.js",
     "postpublish": "zip -j build/hyper-venn.zip -- LICENSE README.md build/hyper-venn.js build/hyper-venn.min.js && npm run publish-npm",
-    "publish-npm": "npm publish --access public --ignore-scripts --@3sigma:registry='https://registry.npmjs.org'"
+    "publish-npm": "npm publish --access public --ignore-scripts --registry='https://registry.npmjs.org'"
   },
   "devDependencies": {
     "browser-sync": "^2.27.12",
