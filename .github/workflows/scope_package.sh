@@ -3,4 +3,6 @@
 YOUR_FILE='package.json'
 FINDTEXT="\\\"name\\\": \\\"hyper-venn\\\""
 SUBSTEXT="\\\"name\\\": \\\"@3SigmaTech\/hyper-venn\\\""
-sed -i "" "s/$FINDTEXT/$SUBSTEXT/" $YOUR_FILE
+
+# Syntax for Linux
+sed -i $YOUR_FILE "s/$FINDTEXT/$SUBSTEXT/"
