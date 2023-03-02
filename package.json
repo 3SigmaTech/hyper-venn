@@ -1,10 +1,11 @@
 {
-  "name": "hyper-venn",
-  "version": "0.0.2",
-  "description": "{DESCRIPTION}",
+  "name": "@3SigmaTech/hyper-venn",
+  "version": "0.0.3",
+  "description": "Renders 3-, 5-, and 7-set pseudo-Venn diagrams",
   "keywords": [
     "d3",
-    "d3-module"
+    "d3-module",
+    "venn"
   ],
   "license": "BSD-3-Clause",
   "main": "build/hyper-venn.js",
@@ -14,6 +15,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/3SigmaTech/hyper-venn.git"
+  },
+  "publishConfig": {
+    "@3SigmaTech:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "pretest": "rm -rf build && mkdir build && rollup -c && cp build/hyper-venn.js ./examples",
@@ -27,7 +31,6 @@
     "rollup": "^0.59.4",
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "rollupify": "^0.5.1",
     "run-when-changed": "^2.1.0",
     "tape": "4",
     "uglify-js": "3"
