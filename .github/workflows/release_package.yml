@@ -25,13 +25,19 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm test
-      #- name: Set package registry
-      #  run: npm config set registry https://npm.pkg.github.com
-      #- name: Github package registry authentication
-      #  run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.PACKAGE_TOKEN }}
       - name: Set package registry
         run: npm config set registry https://registry.npmjs.org
       - name: Npm registry authentication
         run: npm set //registry.npmjs.org/:_authToken ${{ secrets.NODE_AUTH_TOKEN }}
-      - name: Publish package
+      - name: Publish package to NPM
         run: npm publish
+      - name: Set package registry to Github
+        run: npm config set registry https://npm.pkg.github.com
+      - name: Github package registry authentication
+        run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.PACKAGE_TOKEN }}
+      - name: Scope package
+        run: .github/workflows/scope_package.sh
+        shell: bash
+      - name: Publish package to Github
+        run: npm publish
+      
