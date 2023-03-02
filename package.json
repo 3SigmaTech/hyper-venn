@@ -1,6 +1,6 @@
 {
   "name": "hyper-venn",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "Renders 3-, 5-, and 7-set pseudo-Venn diagrams",
   "keywords": [
     "d3",
