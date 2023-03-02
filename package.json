@@ -17,8 +17,8 @@
     "url": "https://github.com/3SigmaTech/hyper-venn.git"
   },
   "scripts": {
-    "pretest": "rm -rf build && mkdir build && rollup -c && cp build/hyper-venn.js ./examples",
-    "test": "tape 'test/**/*-test.js'",
+    "build": "rm -rf build && mkdir build && rollup -c && cp build/hyper-venn.js ./examples",
+    "test": "npm run build && tape 'test/**/*-test.js'",
     "dev": "run-when-changed --watch \"src/*.js\" --exec \"rollup -c\" & browser-sync start --server --files \"examples/**/*\" \"build/*.*\"",
     "prepublish": "npm run test && uglifyjs build/hyper-venn.js -c -m -o build/hyper-venn.min.js",
     "postpublish": "zip -j build/hyper-venn.zip -- LICENSE README.md build/hyper-venn.js build/hyper-venn.min.js"
