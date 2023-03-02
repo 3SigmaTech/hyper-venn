@@ -32,8 +32,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.PACKAGE_TOKEN}}
 
-    publish-npm:
-      needs: build
+  publish-npm:
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       packages: write
